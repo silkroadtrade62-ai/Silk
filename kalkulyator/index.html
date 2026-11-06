@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulyator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-blob b1"></div>
+  <div class="bg-blob b2"></div>
+
+  <main class="calc" aria-label="Kalkulyator">
+    <header class="top">
+      <button class="icon-btn" id="historyToggle" title="Tarix" aria-label="Tarix">
+        <svg viewBox="0 0 24 24"><path d="M12 8v5l3 2M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg>
+      </button>
+      <span class="brand">Kalkulyator</span>
+      <button class="icon-btn" id="themeToggle" title="Mavzuni almashtirish" aria-label="Mavzuni almashtirish">
+        <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </header>
+
+    <section class="display">
+      <div class="expr" id="expr" aria-live="polite"></div>
+      <div class="result" id="result">0</div>
+    </section>
+
+    <section class="keys" id="keys">
+      <button class="k fn" data-action="clear">AC</button>
+      <button class="k fn" data-action="back" aria-label="O'chirish">⌫</button>
+      <button class="k fn" data-action="percent">%</button>
+      <button class="k op" data-value="/">÷</button>
+
+      <button class="k" data-value="7">7</button>
+      <button class="k" data-value="8">8</button>
+      <button class="k" data-value="9">9</button>
+      <button class="k op" data-value="*">×</button>
+
+      <button class="k" data-value="4">4</button>
+      <button class="k" data-value="5">5</button>
+      <button class="k" data-value="6">6</button>
+      <button class="k op" data-value="-">−</button>
+
+      <button class="k" data-value="1">1</button>
+      <button class="k" data-value="2">2</button>
+      <button class="k" data-value="3">3</button>
+      <button class="k op" data-value="+">+</button>
+
+      <button class="k fn" data-action="paren">( )</button>
+      <button class="k" data-value="0">0</button>
+      <button class="k" data-value=".">,</button>
+      <button class="k eq" data-action="equals">=</button>
+    </section>
+
+    <aside class="history" id="history" aria-hidden="true">
+      <div class="history-head">
+        <span>Tarix</span>
+        <button class="link-btn" id="clearHistory">Tozalash</button>
+      </div>
+      <ul id="historyList"></ul>
+      <p class="empty" id="historyEmpty">Hozircha hisob-kitoblar yo'q</p>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
